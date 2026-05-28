@@ -79,7 +79,16 @@ programs.firefox.enable = true;
 programs.niri.enable = true;
 programs.git.enable = true;
 programs.fish.enable = true;
-programs.greetd.enable = true;
+services.greetd = {
+    enable = true;
+    settings = rec {
+        initial_session = {
+	    command = "${pkgs.niri}/bin/niri";
+	    user = "abigail";
+	};
+	default_session = inital_session;
+    };
+};
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
