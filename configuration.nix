@@ -100,6 +100,7 @@ programs.fish.enable = true;
    vscodium
    fastfetch
    neovim
+   (import ./nixupdate.nix)
  ];
 
 fonts.packages = with pkgs; [
