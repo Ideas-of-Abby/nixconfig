@@ -101,6 +101,8 @@ programs.fish.enable = true;
    fastfetch
    neovim
    (import ./nixupdate.nix)
+   xwayland
+   xwayland-satellite
  ];
 
 fonts.packages = with pkgs; [
