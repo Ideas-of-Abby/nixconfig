@@ -86,7 +86,7 @@ services.greetd = {
 	    command = "${pkgs.niri}/bin/niri";
 	    user = "abigail";
 	};
-	default_session = inital_session;
+	default_session = initial_session;
     };
 };
 

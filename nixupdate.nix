@@ -9,7 +9,7 @@ writeShellScriptBin "nixupdate" ''
 		git commit -m "$commit_message"
 		git push -u origin main
 	elif [ "$committing" = "n" ]; then
-		echo "not committing changes"
+		echo not committing changes
 	else
 		check_commit
 	fi
