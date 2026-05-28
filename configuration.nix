@@ -97,6 +97,10 @@ programs.fish.enable = true;
    pywal
    fish
    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+   vscodium
+   fastfetch
+   neovim
+   (import ./nixupdate.nix)
  ];
 
 fonts.packages = with pkgs; [
