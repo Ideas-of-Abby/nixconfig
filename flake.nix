@@ -16,6 +16,7 @@
       modules = [
 	./configuration.nix
 	./noctilia.nix
+	./nixupdate.nix
       ];
     };
   };
