@@ -1,14 +1,20 @@
 with import <nixpkgs> {};
     
 writeShellScriptBin "nixupdate" ''
-	read -p "do you want to commit? [Y/N]" committing
-	if [$committing == "Y" ]; then
-	git add .
-	IFS="\n" read -p "enter commit message : " commit_message
-	git commit -m "$commit_message"
-	git push -u origin main ]
+	check_commit () {
+	IFS="\n" read -p "do you want to commit? [y/n] " committing
+	if [ "$committing" = "y" ]; then
+		git add .
+		IFS="\n" read -p "enter commit message : " commit_message
+		git commit -m "$commit_message"
+		git push -u origin main
+	elif [ "$committing" = "n" ]; then
+		echo "not committing changes"
 	else
-	echo "not committing changes"
+		check_commit
 	fi
+	}
+
+	check_commit
 	sudo nix flake update; sudo nixos-rebuild switch --flake --impure
 	''
