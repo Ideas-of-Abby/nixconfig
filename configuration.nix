@@ -79,6 +79,7 @@ programs.firefox.enable = true;
 programs.niri.enable = true;
 programs.git.enable = true;
 programs.fish.enable = true;
+programs.greetd.enable = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -90,7 +91,6 @@ programs.fish.enable = true;
    kitty
    alacritty
    thunar
-   gdm
    picom
    fuzzel
    hyprlax
